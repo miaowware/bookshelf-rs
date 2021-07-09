@@ -1,0 +1,153 @@
+{
+    "General": [
+        {
+            "title": "The Rust Programming Language",
+            "desc": "asdfadfasdf",
+            "media": {
+                "web": "https://doc.rust-lang.org/stable/book/",
+                "print": "https://nostarch.com/Rust2018",
+                "ebook": "https://nostarch.com/Rust2018"
+            },
+            "official": true,
+            "type": "book"
+        },
+        {
+            "title": "Rust By Example",
+            "desc": "A collection of runnable examples that illustrate various Rust concepts and standard libraries.",
+            "media": {
+                "web": "https://doc.rust-lang.org/stable/rust-by-example/"
+            },
+            "official": true,
+            "type": "guide"
+        },
+        {
+            "title": "The Rustonomicon",
+            "desc": "The Rustonomicon digs into all the awful details that you need to understand when writing Unsafe Rust programs.",
+            "media": {
+                "web": "https://doc.rust-lang.org/nightly/nomicon/"
+            },
+            "official": true,
+            "type": "book"
+        },
+        {
+            "title": "The Rust Reference",
+            "desc": "The primary reference for the Rust programming language",
+            "media": {
+                "web": "https://doc.rust-lang.org/stable/reference/"
+            },
+            "official": true,
+            "type": "reference"
+        },
+        {
+            "title": "Rust Language Cheat Sheet",
+            "desc": "",
+            "media": {
+                "web": "https://cheats.rs"
+            },
+            "official": false,
+            "type": "cheatsheet"
+        },
+        {
+            "title": "The `rustdoc` Book",
+            "desc": "asdfasdfasdfa *test* **test**",
+            "media": {
+                "web": "https://doc.rust-lang.org/rustdoc/"
+            },
+            "official": true,
+            "type": "book"
+        },
+        {
+            "title": "The `rustc` Book",
+            "desc": "asdfasdfasdfa",
+            "media": {
+                "web": "https://doc.rust-lang.org/rustc/"
+            },
+            "official": true,
+            "type": "book"
+        },
+        {
+            "title": "The Edition Guide",
+            "desc": "asdfasdfasdfa",
+            "media": {
+                "web": "https://doc.rust-lang.org/edition-guide/"
+            },
+            "official": true,
+            "type": "guide"
+        }
+    ],
+    "Embedded": [
+        {
+            "title": "The Embedded Rust Book",
+            "desc": "An introductory book about using the Rust programming language on \"bare metal\" embedded systems, such as microcontrollers.",
+            "media": {
+                "web": "https://docs.rust-embedded.org/book/"
+            },
+            "official": true,
+            "type": "book"
+        },
+        {
+            "title": "Discovery",
+            "desc": "Discover the world of microcontrollers through Rust!",
+            "media": {
+                "web": "https://docs.rust-embedded.org/discovery/"
+            },
+            "official": true,
+            "type": "book"
+        },
+        {
+            "title": "The Embedonomicon",
+            "desc": "The embedonomicon walks you through the process of creating a `#![no_std]` application from scratch and through the iterative process of building architecture-specific functionality for Cortex-M microcontrollers.",
+            "media": {
+                "web": "https://docs.rust-embedded.org/embedonomicon/"
+            },
+            "official": true,
+            "type": "book"
+        }
+    ],
+    "Cargo": [
+        {
+            "title": "The Cargo Book",
+            "desc": "asdfasdfasdfs",
+            "media": {
+                "web": "https://doc.rust-lang.org/cargo/"
+            },
+            "official": true,
+            "type": "book"
+        }
+    ],
+    "Async": [
+        {
+            "title": "Asynchronous Programming in Rust",
+            "desc": "asdfasdfasdfasf",
+            "media": {
+                "web": "https://rust-lang.github.io/async-book/"
+            },
+            "official": true,
+            "type": "book"
+        }
+    ],
+    "CLI": [
+
+        {
+            "title": "Command Line Applications in Rust",
+            "desc": "asdfasdfasdfasdf",
+            "media": {
+                "web": "https://rust-cli.github.io/book/"
+            },
+            "official": true,
+            "type": "book"
+        }
+    ],
+    "Web": [
+
+        {
+            "title": "Rust and WebAssembly",
+            "desc": "This small book describes how to use Rust and WebAssembly together.",
+            "media": {
+                "web": "https://rustwasm.github.io/docs/book/"
+            },
+            "official": true,
+            "type": "book"
+        }
+    ]
+}

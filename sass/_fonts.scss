@@ -1,0 +1,20 @@
+// Licenses for these fonts are included in /static/fonts/font_name
+
+@mixin define-fontface($name, $style, $weight, $url) {
+    @font-face {
+        font-family: "#{$name}";
+        font-style: $style;
+        font-weight: $weight;
+        src: url("/fonts/#{$url}") format('truetype');
+    }
+}
+
+@include define-fontface('Fira Mono', normal, 400, 'Fira_Mono/FiraMono-Regular.ttf');
+@include define-fontface('Fira Mono', normal, 500, 'Fira_Mono/FiraMono-Medium.ttf');
+@include define-fontface('Fira Sans Condensed', normal, 500, 'Fira_Sans_Condensed/FiraSansCondensed-Medium.ttf');
+@include define-fontface('Fira Sans Condensed', italic, 500, 'Fira_Sans_Condensed/FiraSansCondensed-MediumItalic.ttf');
+@include define-fontface('Fira Sans Condensed', normal, 600, 'Fira_Sans_Condensed/FiraSansCondensed-SemiBold.ttf');
+@include define-fontface('Fira Sans Condensed', italic, 600, 'Fira_Sans_Condensed/FiraSansCondensed-SemiBoldItalic.ttf');
+// TODO better
+@include define-fontface('Open Sans', normal, 400, 'Open_Sans/OpenSans-Regular.ttf');
+@include define-fontface('Open Sans', italic, 400, 'Open_Sans/OpenSans-Italic.ttf');

@@ -1,0 +1,45 @@
+<!-- TODO: %s/twe/twe/g -->
+
+{% macro emoji(name, type="text") %}
+<i class="twe twe-{{ name | trim }}"></i>
+{% endmacro emoji %}
+
+{% macro emoji_lg(name, type="text") %}
+<i class="twe twe-lg twe-{{ name | trim }}"></i>
+{% endmacro emoji_lg %}
+
+{% macro emoji_2x(name, type="text") %}
+<i class="twe twe-2x twe-{{ name | trim }}"></i>
+{% endmacro emoji_2x %}
+
+{% macro emoji_3x(name, type="text") %}
+<i class="twe twe-3x twe-{{ name | trim }}"></i>
+{% endmacro emoji_3x %}
+
+{% macro emoji_4x(name, type="text") %}
+<i class="twe twe-4x twe-{{ name | trim }}"></i>
+{% endmacro emoji_4x %}
+
+{% macro emoji_5x(name, type="text") %}
+<i class="twe twe-5x twe-{{ name | trim }}"></i>
+{% endmacro emoji_5x %}
+
+{% macro type_emoji(t, type="text") %}
+    {% if t == "book" %}
+    {{ self::emoji(name="closed-book") }}
+    {% elif t == "guide" %}
+    {{ self::emoji(name="blue-book") }}
+    {% elif t == "reference" %}
+    {{ self::emoji(name="open-book") }}
+    {% elif t == "cheatsheet" %}
+    {{ self::emoji(name="bookmark-tabs") }}
+    {% endif %}
+{% endmacro type_emoji %}
+
+{% macro official_emoji(t, type="text") %}
+    {% if t %}
+    {{ self::emoji(name="star") }}
+    {% else %}
+    {{ self::emoji(name="busts-in-silhouette") }}
+    {% endif %}
+{% endmacro official_emoji %}

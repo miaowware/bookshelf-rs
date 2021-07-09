@@ -1,0 +1,50 @@
+// SCSS code based on https://github.com/ellekasai/twemoji-awesome
+// licensed under MIT: https://ellekasai.mit-license.org
+// graphics are licensed under the CC-BY 4.0: https://github.com/twitter/twemoji
+
+.twe {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1em 1em;
+}
+
+$size-map: (
+  "lg": 1.33,
+  "2x": 2,
+  "3x": 3,
+  "4x": 4,
+  "5x": 5,
+);
+
+@each $name, $size in $size-map {
+  .twe-#{$name} {
+    height: 1em * $size;
+    width: 1em * $size;
+    margin: 0 .05em * $size 0 .1em * $size;
+    vertical-align: -0.1em * $size;
+    background-size: 1em * $size 1em * $size;
+  }
+}
+
+// TODO: define emojis based on local files
+$emoji-map: (
+    "closed-book": "1f4d5",
+    "blue-book": "1f4d8",
+    "open-book": "1f4d6",
+    "bookmark-tabs": "1f4d1",
+    "star": "2b50",
+    "busts-in-silhouette": "1f465"
+);
+
+@each $name, $code in $emoji-map {
+    .twe-#{$name} {
+        // TODO switch this
+        // background-image: url("/emoji/#{$code}.svg");
+        background-image: url("https://twemoji.maxcdn.com/v/latest/svg/#{$code}.svg");
+    }
+}

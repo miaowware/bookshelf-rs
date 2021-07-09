@@ -1,0 +1,83 @@
+{% import "macros.html" as macros %}
+{% set data = load_data(path="static/data/books.json") %}
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+    <head>
+        {% block head %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        <!-- Enable responsiveness on mobile devices-->
+        <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+        <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+        <!-- TODO opengraph tags: https://ogp.me -->
+        <meta property="og:title" content="{{ config.title }}" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:description" content="A library of Rust learning resources" />
+        <meta property="og:site_name" content="TheBooks.rs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ current_url }}" />
+        <meta property="og:image" content="" />
+
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path="styles.css", trailing_slash=false) }}">
+
+        <!-- TODO -->
+        <!-- use https://www.favicon-generator.org to generate these files, and place the result in static/favicon -->
+        <link rel="manifest"                              href="{{ get_url(path="favicon/manifest.json",            trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="57x57"   href="{{ get_url(path="favicon/apple-icon-57x57.png",     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="60x60"   href="{{ get_url(path="favicon/apple-icon-60x60.png",     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="72x72"   href="{{ get_url(path="favicon/apple-icon-72x72.png",     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="76x76"   href="{{ get_url(path="favicon/apple-icon-76x76.png",     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="114x114" href="{{ get_url(path="favicon/apple-icon-114x114.png",   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="120x120" href="{{ get_url(path="favicon/apple-icon-120x120.png",   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="144x144" href="{{ get_url(path="favicon/apple-icon-144x144.png",   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="152x152" href="{{ get_url(path="favicon/apple-icon-152x152.png",   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="180x180" href="{{ get_url(path="favicon/apple-icon-180x180.png",   trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon/android-icon-192x192.png", trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="32x32"   href="{{ get_url(path="favicon/favicon-32x32.png",        trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="96x96"   href="{{ get_url(path="favicon/favicon-96x96.png",        trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="16x16"   href="{{ get_url(path="favicon/favicon-16x16.png",        trailing_slash=false) }}">
+        <meta name="msapplication-TileImage"           content="{{ get_url(path="favicon/ms-icon-144x144.png",      trailing_slash=false) }}">
+        <meta name="msapplication-TileColor" content="#ffffff"> <!-- TODO -->
+        <meta name="theme-color" content="#ffffff"> <!-- TODO -->
+        {% endblock head %}
+
+        {% block extra_head %}
+        {% endblock extra_head %}
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}
+            <h1>{{ config.title | safe }}</h1>
+            <p>{{ config.description | safe }}</p>
+            {% for topic, books in data %}
+            <h2>{{ topic | safe }}</h2>
+            <div class="topic">
+                {% for book in books %}
+                <div class="book">
+                    <h3 class="title">
+                        {{ macros::type_emoji(t=book.type) }}
+                        {{ macros::official_emoji(t=book.official) }}
+                        {{ book.title | markdown(inline=true) | safe }}
+                    </h3>
+                    <div class="desc">{{ book.desc | markdown(inline=true) | safe }}</div>
+                    <div class="media">
+                        {% for title, url in book.media %}<a href="{{ url | safe }}">{{ title | safe }}</a>{% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            {% endblock content %}
+
+            <!--
+            <h1>Debug</h1>
+            <pre>{{ data | json_encode(pretty=true) | safe }}</pre>
+            -->
+        </div>
+    </body>
+</html>

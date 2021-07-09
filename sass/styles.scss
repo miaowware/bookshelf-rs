@@ -1,0 +1,78 @@
+@import '_fonts';
+@import '_twemoji';
+
+// TODO browser-specific specifiers for things, testing
+
+html {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 600;
+
+    code {
+        font-size: 0.925em;
+        font-weight: 500;
+    }
+}
+
+h4, h5, h6 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 500;
+
+    code {
+        font-size: 0.925em;
+        font-weight: 500;
+    }
+}
+
+code {
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.925em;
+}
+
+.topic {
+    // based on https://zoaibkhan.com/blog/fastest-way-to-make-a-responsive-card-grid-with-css/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.25rem;
+
+    .book {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        padding: 1.5em;
+        margin: 0.5em;
+
+        .desc {
+            flex-grow: 1;
+        }
+
+        .media {
+            margin-top: auto;
+            padding-top: 1em;
+            text-align: right;
+
+            a {
+                text-decoration: none;
+                padding-inline-start: 0.25em;
+
+                &::before {
+                    content: "[";
+                }
+                &::after {
+                    content: "]";
+                }
+                &:link, &:visited {
+                    color: black;
+                }
+                &:hover {
+                    color: #5c5c5c;
+                }
+            }
+        }
+    }
+}

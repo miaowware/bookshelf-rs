@@ -73,6 +73,15 @@
             },
             "official": true,
             "type": "guide"
+        },
+        {
+            "title": "Rust Cookbook",
+            "desc": "A collection of simple examples that demonstrate good practices to accomplish common programming tasks, using the crates of the Rust ecosystem.",
+            "media": {
+                "web": "https://rust-lang-nursery.github.io/rust-cookbook/"
+            },
+            "official": false,
+            "type": "guide"
         }
     ],
     "Embedded": [

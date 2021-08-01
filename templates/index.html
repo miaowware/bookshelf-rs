@@ -14,14 +14,14 @@
 
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
-        <!-- TODO opengraph tags: https://ogp.me -->
         <meta property="og:title" content="{{ config.title }}" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:description" content="A library of Rust learning resources" />
-        <meta property="og:site_name" content="TheBooks.rs" />
+        <meta property="og:description" content="{{ config.description }}" />
+        <meta property="og:site_name" content="{{ config.base_url }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ current_url }}" />
-        <meta property="og:image" content="" />
+        {% if current_url %}<meta property="og:url" content="{{ current_url }}" />{% endif %}
+        <!-- TODO -->
+        <meta property="og:image" content="{{ get_url(path="", trailing_slash=false) }}" />
 
         <link rel="stylesheet" type="text/css" href="{{ get_url(path="styles.css", trailing_slash=false) }}">
 
@@ -51,9 +51,18 @@
     </head>
     <body>
         <div class="container">
+            <div id="header">
+                <h1>{{ macros::emoji(name="books") }} {{ config.title | safe }} {{ macros::emoji(name="crab") }}</h1>
+                <p>{{ config.description | safe }}</p>
+
+                <div class="links">
+                    <a href="#about">About</a>
+                    <a href="#contribute">Contribute</a>
+                    <a href="{{ config.extra.repo }}">Source</a>
+                </div>
+            </div>
+
             {% block content %}
-            <h1>{{ config.title | safe }}</h1>
-            <p>{{ config.description | safe }}</p>
             {% for topic, books in data %}
             <h2>{{ topic | safe }}</h2>
             <div class="topic">
@@ -72,12 +81,20 @@
                 {% endfor %}
             </div>
             {% endfor %}
-            {% endblock content %}
 
-            <!--
-            <h1>Debug</h1>
-            <pre>{{ data | json_encode(pretty=true) | safe }}</pre>
-            -->
+            <div class="postcontent">
+                <h1 id="about">About</h1>
+                {{ load_data(path="static/about.md") | markdown | safe }}
+
+                <h1 id="contribute">Contribute</h1>
+                {{ load_data(path="static/contribute.md") | markdown | safe }}
+            </div>
+            {% endblock content %}
         </div>
+        <footer>
+            <div class="container">
+                <p id="copyright">Copyright &copy; 2021 MiaowWare</p>
+            </div>
+        </footer>
     </body>
 </html>

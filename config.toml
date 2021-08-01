@@ -1,13 +1,11 @@
 # The URL the site will be built for
 base_url = "https://bookshelf.rs"
 
-title = "Rust Bookshelf"
-description = "A collection of free resources for learning Rust."
+title = "The Rust Bookshelf"
+description = "A library of free resources for learning Rust"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
+minify_html = true
 build_search_index = false
 
 [markdown]
@@ -16,4 +14,4 @@ build_search_index = false
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
+repo = "https://github.com/miaowware/bookshelf-rs"

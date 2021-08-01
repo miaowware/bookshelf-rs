@@ -11,9 +11,11 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 1em 1em;
+    // overflow: visible;
 }
 
 $size-map: (
+  "md": 1.15,
   "lg": 1.33,
   "2x": 2,
   "3x": 3,
@@ -33,12 +35,14 @@ $size-map: (
 
 // TODO: define emojis based on local files
 $emoji-map: (
-    "closed-book": "1f4d5",
-    "blue-book": "1f4d8",
-    "open-book": "1f4d6",
+    "green-book": "1f4d7",
+    "bookmark": "1f516",
+    "scroll": "1f4dc",
     "bookmark-tabs": "1f4d1",
     "star": "2b50",
-    "busts-in-silhouette": "1f465"
+    "busts-in-silhouette": "1f465",
+    "books": "1f4da",
+    "crab": "1f980"
 );
 
 @each $name, $code in $emoji-map {

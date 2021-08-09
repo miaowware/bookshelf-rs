@@ -82,6 +82,10 @@ a {
     }
 }
 
+.topic-header {
+    padding-left: 0.25em;
+}
+
 .topic {
     // based on https://zoaibkhan.com/blog/fastest-way-to-make-a-responsive-card-grid-with-css/
     display: grid;
@@ -129,7 +133,41 @@ footer {
     display:flex;
     justify-content:center;
     align-items:center;
+}
 
-    #copyright {
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #85c1ff;
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+
+    &:hover, &:focus {
+        background: #33ecff;
+    }
+
+    &:active {
+        background: #f7a8da;
+    }
+
+    i {
+        display: block;
+        height: 30px;
+        width: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 25px 25px;
+        background-image: url("/up.svg");
     }
 }

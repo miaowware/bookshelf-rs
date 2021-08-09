@@ -33,7 +33,6 @@ $size-map: (
   }
 }
 
-// TODO: define emojis based on local files
 $emoji-map: (
     "green-book": "1f4d7",
     "bookmark": "1f516",
@@ -47,8 +46,6 @@ $emoji-map: (
 
 @each $name, $code in $emoji-map {
     .twe-#{$name} {
-        // TODO switch this
-        // background-image: url("/emoji/#{$code}.svg");
-        background-image: url("https://twemoji.maxcdn.com/v/latest/svg/#{$code}.svg");
+        background-image: url("/emoji/#{$code}.svg");
     }
 }

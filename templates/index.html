@@ -64,7 +64,7 @@
 
             {% block content %}
             {% for topic, books in data %}
-            <h2>{{ topic | safe }}</h2>
+            <h2 class="topic-header">{{ topic | safe }}</h2>
             <div class="topic">
                 {% for book in books %}
                 <div class="book">
@@ -96,5 +96,8 @@
                 <p id="copyright">Copyright &copy; 2021 MiaowWare</p>
             </div>
         </footer>
+        <button id="scroll-top" type="button"><i></i></button>
+
+        <script src="{{ get_url(path="script.js", trailing_slash=false) }}"></script>
     </body>
 </html>

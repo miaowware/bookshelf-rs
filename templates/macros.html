@@ -28,20 +28,20 @@
 
 {% macro type_emoji(t, type="text") %}
     {% if t == "book" %}
-    {{ self::emoji_md(name="green-book") }}
+    {{ self::emoji_lg(name="green-book") }}
     {% elif t == "reference" %}
-    {{ self::emoji_md(name="bookmark") }}
+    {{ self::emoji_lg(name="bookmark") }}
     {% elif t == "guide" %}
-    {{ self::emoji_md(name="scroll") }}
+    {{ self::emoji_lg(name="scroll") }}
     {% elif t == "cheatsheet" %}
-    {{ self::emoji_md(name="bookmark-tabs") }}
+    {{ self::emoji_lg(name="bookmark-tabs") }}
     {% endif %}
 {% endmacro type_emoji %}
 
 {% macro official_emoji(t, type="text") %}
     {% if t %}
-    {{ self::emoji_md(name="star") }}
+    {{ self::emoji_lg(name="star") }}
     {% else %}
-    {{ self::emoji_md(name="busts-in-silhouette") }}
+    {{ self::emoji_lg(name="busts-in-silhouette") }}
     {% endif %}
 {% endmacro official_emoji %}

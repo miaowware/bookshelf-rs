@@ -7,6 +7,7 @@ html {
     height: 100vh;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
+    background: url("/background-tile.png") repeat;
     background-color: #2b2a29;
     color: #eee;
 }
@@ -26,6 +27,12 @@ h1, h2, h3 {
         font-weight: 500;
     }
 }
+
+.postcontent > h1, .topic-header {
+    margin-block-start: 1em;
+    margin-block-end: 0.25em;
+}
+
 
 h4, h5, h6 {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -84,6 +91,7 @@ a {
 
 .topic-header {
     padding-left: 0.25em;
+    font-size: 1.8em;
 }
 
 .topic {
@@ -103,6 +111,7 @@ a {
 
         .title {
             margin-top: 0.25em;
+            font-size: 1.33em;
         }
 
         .desc {
@@ -130,7 +139,7 @@ a {
 
 footer {
     padding: 1.5em;
-    display:flex;
+    display: flex;
     justify-content:center;
     align-items:center;
 }

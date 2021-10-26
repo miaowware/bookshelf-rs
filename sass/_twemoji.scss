@@ -10,12 +10,11 @@
     vertical-align: -0.1em;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 1em 1em;
-    // overflow: visible;
+    background-size: contain;
 }
 
 $size-map: (
-  "md": 1.15,
+  "md": 1.2,
   "lg": 1.33,
   "2x": 2,
   "3x": 3,
@@ -29,7 +28,6 @@ $size-map: (
     width: 1em * $size;
     margin: 0 .05em * $size 0 .1em * $size;
     vertical-align: -0.1em * $size;
-    background-size: 1em * $size 1em * $size;
   }
 }
 

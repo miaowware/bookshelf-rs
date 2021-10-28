@@ -1,5 +1,5 @@
 {% import "macros.html" as macros %}
-{% set data = load_data(path="static/data/books.json") %}
+{% set data = load_data(path="input/books.json") %}
 
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
@@ -21,27 +21,27 @@
         <meta property="og:type" content="website" />
         {% if current_url %}<meta property="og:url" content="{{ current_url }}" />{% endif %}
         <!-- TODO -->
-        <meta property="og:image" content="{{ get_url(path="", trailing_slash=false) }}" />
+        <meta property="og:image" content="{{ get_url(path='', trailing_slash=false) }}" />
 
-        <link rel="stylesheet" type="text/css" href="{{ get_url(path="styles.css", trailing_slash=false) }}">
+        <link rel="stylesheet" type="text/css" href="{{ get_url(path='script.css', trailing_slash=false) }}">
 
         <!-- TODO -->
         <!-- use https://www.favicon-generator.org to generate these files, and place the result in static/favicon -->
-        <link rel="manifest"                              href="{{ get_url(path="favicon/manifest.json",            trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="57x57"   href="{{ get_url(path="favicon/apple-icon-57x57.png",     trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="60x60"   href="{{ get_url(path="favicon/apple-icon-60x60.png",     trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="72x72"   href="{{ get_url(path="favicon/apple-icon-72x72.png",     trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="76x76"   href="{{ get_url(path="favicon/apple-icon-76x76.png",     trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="114x114" href="{{ get_url(path="favicon/apple-icon-114x114.png",   trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="120x120" href="{{ get_url(path="favicon/apple-icon-120x120.png",   trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="144x144" href="{{ get_url(path="favicon/apple-icon-144x144.png",   trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="152x152" href="{{ get_url(path="favicon/apple-icon-152x152.png",   trailing_slash=false) }}">
-        <link rel="apple-touch-icon"      sizes="180x180" href="{{ get_url(path="favicon/apple-icon-180x180.png",   trailing_slash=false) }}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path="favicon/android-icon-192x192.png", trailing_slash=false) }}">
-        <link rel="icon" type="image/png" sizes="32x32"   href="{{ get_url(path="favicon/favicon-32x32.png",        trailing_slash=false) }}">
-        <link rel="icon" type="image/png" sizes="96x96"   href="{{ get_url(path="favicon/favicon-96x96.png",        trailing_slash=false) }}">
-        <link rel="icon" type="image/png" sizes="16x16"   href="{{ get_url(path="favicon/favicon-16x16.png",        trailing_slash=false) }}">
-        <meta name="msapplication-TileImage"           content="{{ get_url(path="favicon/ms-icon-144x144.png",      trailing_slash=false) }}">
+        <link rel="manifest"                              href="{{ get_url(path='favicon/manifest.json',            trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="57x57"   href="{{ get_url(path='favicon/apple-icon-57x57.png',     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="60x60"   href="{{ get_url(path='favicon/apple-icon-60x60.png',     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="72x72"   href="{{ get_url(path='favicon/apple-icon-72x72.png',     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="76x76"   href="{{ get_url(path='favicon/apple-icon-76x76.png',     trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="114x114" href="{{ get_url(path='favicon/apple-icon-114x114.png',   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="120x120" href="{{ get_url(path='favicon/apple-icon-120x120.png',   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="144x144" href="{{ get_url(path='favicon/apple-icon-144x144.png',   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="152x152" href="{{ get_url(path='favicon/apple-icon-152x152.png',   trailing_slash=false) }}">
+        <link rel="apple-touch-icon"      sizes="180x180" href="{{ get_url(path='favicon/apple-icon-180x180.png',   trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ get_url(path='favicon/android-icon-192x192.png', trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="32x32"   href="{{ get_url(path='favicon/favicon-32x32.png',        trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="96x96"   href="{{ get_url(path='favicon/favicon-96x96.png',        trailing_slash=false) }}">
+        <link rel="icon" type="image/png" sizes="16x16"   href="{{ get_url(path='favicon/favicon-16x16.png',        trailing_slash=false) }}">
+        <meta name="msapplication-TileImage"           content="{{ get_url(path='favicon/ms-icon-144x144.png',      trailing_slash=false) }}">
         <meta name="msapplication-TileColor" content="#ffffff"> <!-- TODO -->
         <meta name="theme-color" content="#ffffff"> <!-- TODO -->
         {% endblock head %}
@@ -56,8 +56,8 @@
                 <p>{{ config.description | safe }}</p>
 
                 <div class="links">
-                    <a href="#about">About</a>
-                    <a href="#contribute">Contribute</a>
+                    <a href="/#about">About</a>
+                    <a href="/#contribute">Contribute</a>
                     <a href="{{ config.extra.repo }}">Source</a>
                 </div>
             </div>
@@ -84,10 +84,10 @@
 
             <div class="postcontent">
                 <h1 id="about">About</h1>
-                {{ load_data(path="static/about.md") | markdown | safe }}
+                {{ load_data(path="input/about.md") | markdown | safe }}
 
                 <h1 id="contribute">Contribute</h1>
-                {{ load_data(path="static/contribute.md") | markdown | safe }}
+                {{ load_data(path="input/contribute.md") | markdown | safe }}
             </div>
             {% endblock content %}
         </div>
@@ -98,6 +98,6 @@
         </footer>
         <button id="scroll-top" type="button"><i></i></button>
 
-        <script src="{{ get_url(path="script.js", trailing_slash=false) }}"></script>
+        <script src="{{ get_url(path='styles.js', trailing_slash=false) }}"></script>
     </body>
 </html>

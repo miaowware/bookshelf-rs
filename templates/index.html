@@ -64,7 +64,7 @@
 
             {% block content %}
             {% for topic, books in data %}
-            <h2 class="topic-header">{{ topic | safe }}</h2>
+            <h2 class="topic-header">{{ topic | markdown(inline=true) | safe }}</h2>
             <div class="topic">
                 {% for book in books %}
                 <div class="book">
